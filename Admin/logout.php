@@ -1,0 +1,34 @@
+<?php
+session_start();
+
+// Destroy all session data
+$_SESSION = array();
+
+// If it's desired to kill the session, also delete the session cookie
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 2000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
+
+// Finally, destroy the session
+session_destroy();
+
+// Also clear remember me cookies
+setcookie('admin_email', '', time() - 3600, "/");
+setcookie('admin_remember', '', time() - 3600, "/");
+
+// Redirect to login page with success message
+header("Location: login.php?logout=success");
+exit();
+?>
+
+<?php
+session_start();
+session_unset();
+session_destroy();
+
+header("Location: login.php?success=Logged out successfully");
+exit();
