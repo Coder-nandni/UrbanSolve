@@ -1,7 +1,3 @@
-Team Id :CC3H-223
-Team Name : Code Crushers
-Team Members : Nandni ,Khushi , Nandini
-
 # 🌆 UrbanSolve – City Problem Management System
 
 ## 📌 Problem Statement
@@ -37,4 +33,4 @@ UrbanSolve is a web-based platform that allows users to:
 5. User tracks progress
 
 ## 👩‍💻 Developed By
-Code Crushers
+Nandni
